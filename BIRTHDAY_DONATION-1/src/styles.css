@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+:root{
+    --primary-color: orange;
+    --secondary-color:black;
+
+
+}
+body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+i{
+        padding: 0px 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,42 @@
+.img-fluid{
+    background-image: url('../../../assets/image/banner-2.webp');
+    height: 600px;
+    background-position: center top;
+    background-size: cover;
+}
+.content{
+    top: 55%;
+    left: 8.5%;
+    position: absolute;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+}   
+
+.donationlink{
+    color :white;
+    text-decoration: none;
+}
+
+.content:hover{
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.stepbox{
+    background-color: black;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stepbox p{
+    font-size: 20px;
+    font-style: italic;
+    color: aliceblue;
+}
+.row mt-5{
+    height: 100px;
+}
