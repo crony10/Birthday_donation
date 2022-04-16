@@ -9,7 +9,17 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+ 
+  ngo = false;
   ngOnInit(): void {
+  }
+
+  donorsWorksClicked() {
+    this.ngo = false;
+  }
+
+  ngoWorksClicked() {
+    this.ngo = true;
   }
 
 }
