@@ -7,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationComponent implements OnInit {
 
+  donation = 0;
+  cardProperties = [{
+    image:'../../../assets/image/boy.webp',
+    title:'Food donation',
+    text:'donate here'
+  }]
   constructor() { }
 
   ngOnInit(): void {
   }
 
   donateButtonClicked(){
-    alert("ok")
+    alert("you have doanted "+this.donation)
   }
 }

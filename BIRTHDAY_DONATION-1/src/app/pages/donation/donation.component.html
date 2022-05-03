@@ -1,156 +1,100 @@
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
-            role="tab" aria-controls="nav-home" aria-selected="true">URGENT</button>
-        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
-            role="tab" aria-controls="nav-profile" aria-selected="false">ANIMAL</button>
-        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
-            role="tab" aria-controls="nav-contact" aria-selected="false">CHILDREN</button>
-        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
-            role="tab" aria-controls="nav-contact" aria-selected="false">MEDICAL</button>
-    </div>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+      role="tab" aria-controls="nav-home" aria-selected="true">URGENT</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+      role="tab" aria-controls="nav-profile" aria-selected="false">ANIMAL</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+      role="tab" aria-controls="nav-contact" aria-selected="false">CHILDREN</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+      role="tab" aria-controls="nav-contact" aria-selected="false">MEDICAL</button>
+  </div>
 </nav>
-<div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="../../../assets/image/EDUCATION.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This card has supporting Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vitae nesciunt quibusdam deserunt, veritat</p>
-                  <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="../../../assets/image/Animal.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-                </div>
-                
-              </div>
-            </div>
+<div class="tab-content" id="nav-tabContent" *ngFor="let card of cardProperties">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{card.title}}</h5>
+            <p class="card-text">{{card.text}}</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Donate
+            </button>
           </div>
+        </div>
+      </div>
     </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">  <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/EDUCATION.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vitae nesciunt quibusdam deserunt, veritat</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/Animal.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-      </div></div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">  <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/EDUCATION.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vitae nesciunt quibusdam deserunt, veritat</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/Animal.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-      </div></div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"> <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/EDUCATION.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vitae nesciunt quibusdam deserunt, veritat</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../../../assets/image/Animal.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
-            </div>
-            
-          </div>
-        </div>
-      </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">Enter the amount you want to donate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="number" [(ngModel)] = "donation">
+      </div>
+      <div class="modal-footer">
+        <button 
+        (click)="donateButtonClicked()"
+        type="button" class="btn btn-success" data-bs-dismiss="modal">Donate</button>
+      </div>
+    </div>
+  </div>
 </div>
