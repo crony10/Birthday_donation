@@ -12,4 +12,7 @@ export class DonationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  donateButtonClicked(){
+    alert("ok")
+  }
 }
