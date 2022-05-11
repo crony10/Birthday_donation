@@ -25,6 +25,10 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Donate
             </button>
+            <br>
+            <button type="button" class="mt-3 btn btn-primary"  (click)="fetchDonation()">
+              Fetch Donation
+            </button>
           </div>
         </div>
       </div>
@@ -39,7 +43,7 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
-            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
           </div>
 
         </div>
@@ -55,7 +59,7 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
-            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
           </div>
         </div>
       </div>
@@ -70,7 +74,7 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
-            <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
           </div>
         </div>
       </div>
@@ -85,15 +89,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-danger" id="exampleModalLabel">Enter the amount you want to donate</h5>
+        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body">
-        <input type="number" [(ngModel)] = "donation">
+        <input type="number" [(ngModel)]="donationObject.amount">
       </div>
+
       <div class="modal-footer">
-        <button 
-        (click)="donateButtonClicked()"
-        type="button" class="btn btn-success" data-bs-dismiss="modal">Donate</button>
+        <button (click)="sendDonation()" type="button" class="btn btn-success" data-bs-dismiss="modal">Donate</button>
       </div>
     </div>
   </div>

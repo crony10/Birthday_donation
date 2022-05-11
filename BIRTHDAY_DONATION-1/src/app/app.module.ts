@@ -15,6 +15,7 @@ import { AboutThisWebsiteComponent } from './pages/about-this-website/about-this
 import { SignupComponent } from './pages/signup/login/signup/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
