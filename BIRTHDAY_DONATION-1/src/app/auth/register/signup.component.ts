@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
 
@@ -16,6 +15,17 @@ export class SignupComponent implements OnInit {
 
   onLoginClicked(){
     this.router.navigate(['/login'])
+  }
+
+  Hobbies: string[] = [
+    'Acrobatics',
+    'Acting',
+    'Animation',
+    'Astronomy',
+    'Baking',
+  ];
+  onSubmit(form: any) {
+    console.log(form.value);
   }
 
 }

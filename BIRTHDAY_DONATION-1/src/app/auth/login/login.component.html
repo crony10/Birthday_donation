@@ -1,0 +1,33 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+                <mat-card>
+                    <form (submit) = "onLoginClicked(loginForm)" #loginForm = "ngForm">
+
+                        <mat-form-field>
+                            <input type="email" name="email" matInput placeholder="Email" #emailInput="ngModel" required email >
+                            <mat-error *ngIf="emailInput.invalid">Enter valid email</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" required>
+                        </mat-form-field>
+
+                        <div><button mat-raised-button color="accent" type="submit">Login</button></div>
+                    </form>
+                </mat-card>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
+                        <a class="link-danger" (click)="onSignupClicked()">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

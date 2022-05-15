@@ -5,8 +5,8 @@ import { CONTACTUSComponent } from './pages/contact-us/contact-us.component';
 import { DonationComponent } from './pages/donation/donation.component';
 import { FAQComponent } from './pages/faq/faq.component';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/signup/login/login.component';
-import { SignupComponent } from './pages/signup/login/signup/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/register/signup.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},

@@ -10,13 +10,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { DonationComponent } from './pages/donation/donation.component';
 import { FAQComponent } from './pages/faq/faq.component';
 import { CONTACTUSComponent } from './pages/contact-us/contact-us.component';
-import { LoginComponent } from './pages/signup/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { AboutThisWebsiteComponent } from './pages/about-this-website/about-this-website.component';
-import { SignupComponent } from './pages/signup/login/signup/signup/signup.component';
+import { SignupComponent } from './auth/register/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import {HttpClientModule} from '@angular/common/http';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,11 @@ import {HttpClientModule} from '@angular/common/http';
     MatTabsModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
