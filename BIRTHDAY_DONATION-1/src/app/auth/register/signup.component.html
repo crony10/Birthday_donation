@@ -7,15 +7,40 @@
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
+                <mat-card>
+                    <form (submit) = "onSignupClicked(signupForm)" #signupForm = "ngForm">
 
-                <!-- switch to login -->
+                        <mat-form-field>
+                            <input 
+                            type="email" 
+                            matInput 
+                            placeholder="Email" 
+                            required 
+                            email 
+                            name="email" 
+                            ngModel 
+                            #emailInput="ngModel" >
+                            <mat-error *ngIf="emailInput.invalid">Enter valid email</mat-error>
+                        </mat-form-field> 
+                        <mat-form-field>
+                            <input 
+                            ngModel #passwordInput="ngModel" 
+                            type="password" 
+                            matInput 
+                            name="password"
+                            placeholder="Password" 
+                            required>
+                            <mat-error *ngIf="passwordInput.invalid">Enter valid password</mat-error>
+                        </mat-form-field>
+
+                        <button #submitButton mat-raised-button color="accent" type="submit">Signup</button>
+                    </form>
+                </mat-card>
                 <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="button" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a (click)="onLoginClicked()"
-                            class="link-danger">Login</a></p>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? 
+                        <a class="link-danger" (click)="onLoginClicked()">Login</a>
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>

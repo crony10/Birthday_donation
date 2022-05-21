@@ -11,14 +11,29 @@
                     <form (submit) = "onLoginClicked(loginForm)" #loginForm = "ngForm">
 
                         <mat-form-field>
-                            <input type="email" name="email" matInput placeholder="Email" #emailInput="ngModel" required email >
+                            <input 
+                            type="email" 
+                            matInput 
+                            placeholder="Email" 
+                            required 
+                            email 
+                            name="email" 
+                            ngModel 
+                            #emailInput="ngModel" >
                             <mat-error *ngIf="emailInput.invalid">Enter valid email</mat-error>
-                        </mat-form-field>
+                        </mat-form-field> 
                         <mat-form-field>
-                            <input type="password" matInput placeholder="Password" required>
+                            <input 
+                            ngModel #passwordInput="ngModel" 
+                            type="password" 
+                            matInput 
+                            name="password"
+                            placeholder="Password" 
+                            required>
+                            <mat-error *ngIf="passwordInput.invalid">Enter valid password</mat-error>
                         </mat-form-field>
 
-                        <div><button mat-raised-button color="accent" type="submit">Login</button></div>
+                        <button #submitButton mat-raised-button color="accent" type="submit">Login</button>
                     </form>
                 </mat-card>
                 <div class="text-center text-lg-start mt-4 pt-2">
