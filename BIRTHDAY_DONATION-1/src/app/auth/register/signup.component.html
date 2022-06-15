@@ -1,0 +1,48 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+                <mat-card>
+                    <form (submit) = "onSignupClicked(signupForm)" #signupForm = "ngForm">
+
+                        <mat-form-field>
+                            <input 
+                            type="email" 
+                            matInput 
+                            placeholder="Email" 
+                            required 
+                            email 
+                            name="email" 
+                            ngModel 
+                            #emailInput="ngModel" >
+                            <mat-error *ngIf="emailInput.invalid">Enter valid email</mat-error>
+                        </mat-form-field> 
+                        <mat-form-field>
+                            <input 
+                            ngModel #passwordInput="ngModel" 
+                            type="password" 
+                            matInput 
+                            name="password"
+                            placeholder="Password" 
+                            required>
+                            <mat-error *ngIf="passwordInput.invalid">Enter valid password</mat-error>
+                        </mat-form-field>
+
+                        <button #submitButton mat-raised-button color="accent" type="submit">Signup</button>
+                    </form>
+                </mat-card>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? 
+                        <a class="link-danger" (click)="onLoginClicked()">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
