@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 
 
-mongoose.connect("mongodb+srv://Crony:gZn5RdiD2r3z61jf@cluster0.ovd99.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://Crony:gZn5RdiD2r3z61jf@cluster0.ovd99.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>{
     console.log('db connected!');
 })

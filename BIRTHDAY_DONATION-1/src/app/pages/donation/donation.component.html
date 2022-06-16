@@ -2,23 +2,84 @@
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
       role="tab" aria-controls="nav-home" aria-selected="true">URGENT</button>
+      
     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
       role="tab" aria-controls="nav-profile" aria-selected="false">ANIMAL</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
-      role="tab" aria-controls="nav-contact" aria-selected="false">CHILDREN</button>
+
     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
       role="tab" aria-controls="nav-contact" aria-selected="false">MEDICAL</button>
   </div>
 </nav>
+
 <div class="tab-content" id="nav-tabContent" *ngFor="let card of cardProperties">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
-          <img [src]="card.image" class="card-img-top" alt="...">
+          <img [src]="card.card1.image" class="card-img-top" alt="..." width="300" height="300">
           <div class="card-body">
-            <h5 class="card-title">{{card.title}}</h5>
-            <p class="card-text">{{card.text}}</p>
+            <h5 class="card-title">{{card.card1.title}}</h5>
+            <p class="card-text">{{card.card1.text}}</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Donate
+            </button>
+            <br>
+            <button type="button" class="mt-3 btn btn-primary"  (click)="fetchDonation()">
+              Fetch Donation
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.card2.image" class="card-img-top" alt="..." width="300" height="300">
+          <div class="card-body">
+            <h5 class="card-title">{{card.card2.title}}</h5>
+            <p class="card-text">{{card.card2.text}}</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Donate
+            </button>
+            <br>
+            <button type="button" class="mt-3 btn btn-primary"  (click)="fetchDonation()">
+              Fetch Donation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.card3.image" class="card-img-top" alt="..." width="300" height="300">
+          <div class="card-body">
+            <h5 class="card-title">{{card.card3.title}}</h5>
+            <p class="card-text">{{card.card3.text}}</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Donate
+            </button>
+            <br>
+            <button type="button" class="mt-3 btn btn-primary"  (click)="fetchDonation()">
+              Fetch Donation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.card4.image" class="card-img-top" alt="..." width="300" height="300">
+          <div class="card-body">
+            <h5 class="card-title">{{card.card4.title}}</h5>
+            <p class="card-text">{{card.card4.text}}</p>
             <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
 
             <!-- Button trigger modal -->
@@ -34,11 +95,42 @@
       </div>
     </div>
   </div>
+
+
+
+
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="row row-cols-1 row-cols-md-3 g-4">
+
       <div class="col">
         <div class="card h-100">
-          <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
+          <img [src]="card.animal1.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.animal2.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="card.animal3.image" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -50,6 +142,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
@@ -65,21 +159,7 @@
       </div>
     </div>
   </div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="../../../assets/image/boy.webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <!-- <a (click)="donateButtonClicked()" class="btn btn-primary">Donate</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 
