@@ -48,35 +48,109 @@
   </div>
 </div>
 
-<!-- step 2 -->
-<div *ngIf="donors">
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-      <div class="how-it-works_stepWrapper__1Xof_">
-        <div class="how-it-works_stepHeading__VVyYp">
-          <span>STEP</span>
-          <label>02</label>
-        </div>
-        <div class="how-it-works_stepImg__Pt5dY">
-          <img src="../../../assets/image/step2.png"
-            class="ls-is-cached lazyloaded gm-added gm-lazy gm-observing gm-observing-cb">
-        </div>
-        <div class="how-it-works_stepSeparator__188av">
-        </div>
-
-        <div class="how-it-works_stepContentWrapper__2rNB2">
-          <h3 class="how-it-works_stepTitle__1AEgd">Campaign Page Live</h3>The fundraiser page is made live, allowing
-          donors to donate towards the products listed as per the NGO/individuals requirements. <p
-            class="how-it-works_lineBreak__2QZ0l">
-          </p>The request is reviewed by the team.<br>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
 <!-- donor page -->
 <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
   </div> -->
+  <br>
+  <div *ngIf="!donors">
+    <!-- step 2-->
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="how-it-works_stepWrapper__1Xof_">
+          <div class="how-it-works_stepHeading__VVyYp">
+            <span>STEP</span>
+            <label>02</label>
+          </div>
+          <div class="how-it-works_stepImg__Pt5dY">
+            <img src="../../../assets/image/step2.png"
+              class="ls-is-cached lazyloaded gm-added gm-lazy gm-observing gm-observing-cb">
+          </div>
+          <div class="how-it-works_stepSeparator__188av">
+          </div>
+          <div class="how-it-works_stepContentWrapper__2rNB2">
+            <h3 class="how-it-works_stepTitle__1AEgd">
+              Set Up Campaign</h3>If approved, the NGO/individual will receive a call from one of our campaign managers within one week to set up the campaign <p class="how-it-works_lineBreak__2QZ0l">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <div *ngIf="!donors">
+    <!-- step 3 -->
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="how-it-works_stepWrapper__1Xof_">
+          <div class="how-it-works_stepHeading__VVyYp">
+            <span>STEP</span>
+            <label>03</label>
+          </div>
+          <div class="how-it-works_stepImg__Pt5dY">
+            <img src="../../../assets/image/step3.png"
+              class="ls-is-cached lazyloaded gm-added gm-lazy gm-observing gm-observing-cb">
+          </div>
+          <div class="how-it-works_stepSeparator__188av">
+          </div>
+          <div class="how-it-works_stepContentWrapper__2rNB2">
+            <h3 class="how-it-works_stepTitle__1AEgd">
+              Campaign Page Live</h3>The fundraiser page is made live, allowing donors to donate towards the products listed as per the NGO/individuals requirements. <p class="how-it-works_lineBreak__2QZ0l">
+                <a to="/requestcampaign" class="how-it-works_stepLink__3fFso" href="/">View Campaign</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div *ngIf="!donors">
+    <!-- step 4 -->
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="how-it-works_stepWrapper__1Xof_">
+          <div class="how-it-works_stepHeading__VVyYp">
+            <span>STEP</span>
+            <label>04</label>
+          </div>
+          <div class="how-it-works_stepImg__Pt5dY">
+            <img src="../../../assets/image/step4.png"
+              class="ls-is-cached lazyloaded gm-added gm-lazy gm-observing gm-observing-cb">
+          </div>
+          <div class="how-it-works_stepSeparator__188av">
+          </div>
+          <div class="how-it-works_stepContentWrapper__2rNB2">
+            <h3 class="how-it-works_stepTitle__1AEgd">Funds Raised</h3>Once a considerable amount of products have been donated, the products are dispatched by our team.
+            Products are delivered directly to NGO/Individuals. <p class="how-it-works_lineBreak__2QZ0l">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- step 2 for donor-->
+<div *ngIf="donors">
+  <div class="stepper-wrapper">
+    <div class="stepper-item completed">
+      <div class="step-counter">1</div>
+      <div class="step-name">First</div>
+    </div>
+    <div class="stepper-item completed">
+      <div class="step-counter">2</div>
+      <div class="step-name">Second</div>
+    </div>
+    <div class="stepper-item active">
+      <div class="step-counter">3</div>
+      <div class="step-name">Third</div>
+    </div>
+    <div class="stepper-item">
+      <div class="step-counter">4</div>
+      <div class="step-name">Forth</div>
+    </div>
+  </div>
+</div>
