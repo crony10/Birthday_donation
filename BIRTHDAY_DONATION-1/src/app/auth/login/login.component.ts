@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -10,14 +11,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,public authService : AuthService) { }
 
   ngOnInit(): void {
   }
 
   onLoginClicked(form : NgForm){
-    console.log(form.value)
-
+    if(form.invalid){
+      return;
+    }
+    this.authService.loginUser(form.value.email,form.value.password);
   }
 
   onSignupClicked(){

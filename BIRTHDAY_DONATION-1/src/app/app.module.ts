@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
+import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     AboutThisWebsiteComponent,
     SignupComponent,
+    AdminPageComponent,
+    UserPageComponent,
 
   ],
   imports: [
