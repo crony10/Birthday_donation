@@ -15,13 +15,14 @@ import { AboutThisWebsiteComponent } from './pages/about-this-website/about-this
 import { SignupComponent } from './auth/register/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { UserPageComponent } from './pages/profile_pages/user-page/user-page.com
     MatButtonModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

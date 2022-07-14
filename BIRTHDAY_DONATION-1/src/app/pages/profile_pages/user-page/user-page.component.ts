@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { donationService } from '../../donation/donation.service';
 
 @Component({
   selector: 'app-user-page',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
-  constructor() { }
+  donationObject = {
+    id: 0,
+    amount: 0
+  }
+
+  constructor(public donationService:donationService) { }
 
   ngOnInit(): void {
+
+    
+  }
+
+  showDonations(){
+    this.donationService.fetchDonation();
   }
 
 }

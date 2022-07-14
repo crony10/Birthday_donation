@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { transformAll } from '@angular/compiler/src/render3/r3_ast';
+import { donationService } from './donation.service';
 
 @Component({
   selector: 'app-donation',
@@ -69,36 +68,18 @@ export class DonationComponent implements OnInit {
     text:'donate here'
     }
   }]
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,public donationService:donationService) { }
 
-  sendDonation() {
-    // for posting
-    this.donationObject.id++;
-    console.log("the amount donated on the client is: " + this.donationObject.amount + "also the id of the donation is : " + this.donationObject.id);
-    this.http.post<{ message: string, amount: number }>('http://localhost:3000/api/donation', this.donationObject)
-      .subscribe((responseData) => {
-        console.log("this is client saying we have sent the data to server and got the message from there which is: " + responseData.message);
-      });
+  sendDonation(){
+    // for sending the donation
+    console.log("sending the amount : ",this.donationObject.amount);
+    this.donationService.sendDonation(this.donationObject.amount);
   }
 
   fetchDonation() {
+    
     // for getting
-    this.http.
-      get<{ message: string, donations: any }>('http://localhost:3000/api/donation')
-      .pipe(map((donationData) => {
-        return donationData.donations.map((donation: { _id: any; amount: any; }) => {
-          return {
-            id: donation._id,
-            amount: donation.amount
-          }
-        });
-      }))
-      .subscribe((transfromedDonations) => {
-        console.table(transfromedDonations);
-        this.donationObject = transfromedDonations;
-        // console.log("aayi gyu: "+ donationData.donations  + " and the message is: " + donationData.message); 
-        console.log(this.donationObject);
-      })
+    this.donationService.fetchDonation();
   }
 
   ngOnInit(): void {
