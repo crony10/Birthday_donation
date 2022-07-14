@@ -23,8 +23,19 @@
                     <a class="nav-link " routerLink="contact-us" routerLinkActive="active-link">CONTACT_US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " routerLink="signup" routerLinkActive="active-link">Signup</a>
+                    <a class="nav-link " routerLink="signup" routerLinkActive="active-link">SIGNUP</a>
                 </li>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      USER
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" routerLink="profile" routerLinkActive="active-link">My Profile</a></li>
+                      <li><a class="dropdown-item" routerLink="mydonation" routerLinkActive="active-link">My Donation</a></li>
+                      <li><a class="dropdown-item" routerLink="transactions" routerLinkActive="active-link">My Transactions</a></li>
+                      <li><a class="dropdown-item" >LogOut</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </div>

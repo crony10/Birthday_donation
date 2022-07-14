@@ -20,6 +20,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
+import { MydonationComponent } from './pages/mydonation/mydonation.component';
+import { MytransactionsComponent } from './pages/mytransactions/mytransactions.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     AboutThisWebsiteComponent,
     SignupComponent,
+    MyprofileComponent,
+    MydonationComponent,
+    MytransactionsComponent,
 
   ],
   imports: [
