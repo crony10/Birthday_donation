@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="">BD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -7,32 +7,42 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link active" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">HOME</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link" routerLink="about_this_website" routerLinkActive="active-link">ABOUT THIS WEBSITE</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link" routerLink="donation" routerLinkActive="active-link">DONATION</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link" routerLink="faq" routerLinkActive="active-link">FAQ</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link " routerLink="contact-us" routerLinkActive="active-link">CONTACT_US</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" mat-tab-nav-bar>
                     <a class="nav-link " routerLink="signup" routerLinkActive="active-link">SIGNUP</a>
                 </li>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" mat-flat-button>
                       USER
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" routerLink="profile" routerLinkActive="active-link">My Profile</a></li>
-                      <li><a class="dropdown-item" routerLink="mydonation" routerLinkActive="active-link">My Donation</a></li>
-                      <li><a class="dropdown-item" routerLink="transactions" routerLinkActive="active-link">My Transactions</a></li>
+                      <li><a class="dropdown-item" routerLink="profileuser" routerLinkActive="active-link">My Profile</a></li>
+                      <li><a class="dropdown-item" routerLink="mydonationuser" routerLinkActive="active-link">My Donation</a></li>
+                      <li><a class="dropdown-item" routerLink="transactionsuser" routerLinkActive="active-link">My Transactions</a></li>
+                      <li><a class="dropdown-item" >LogOut</a></li>
+                    </ul>
+                </div>               
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" mat-flat-button>
+                      ADMIN
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" routerLink="profileadmin" routerLinkActive="active-link">My Profile</a></li>
+                      <li><a class="dropdown-item" routerLink="editdonationadmin" routerLinkActive="active-link">Edit Donation</a></li>
                       <li><a class="dropdown-item" >LogOut</a></li>
                     </ul>
                 </div>

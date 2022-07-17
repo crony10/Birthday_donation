@@ -20,9 +20,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MyprofileComponent } from './pages/myprofile/myprofile.component';
-import { MydonationComponent } from './pages/mydonation/mydonation.component';
-import { MytransactionsComponent } from './pages/mytransactions/mytransactions.component';
+import { MyprofileComponent } from './pages/user/myprofile/myprofile.component';
+import { MydonationComponent } from './pages/user/mydonation/mydonation.component';
+import { MytransactionsComponent } from './pages/user/mytransactions/mytransactions.component';
+import { AdminComponent } from './pages/admin/admin.component';
+
+import { EditdonationadminComponent } from './pages/admin/editdonationadmin/editdonationadmin.component';
+import { MyprofileadminComponent } from './pages/admin/myprofileadmin/myprofileadmin.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,10 @@ import { MytransactionsComponent } from './pages/mytransactions/mytransactions.c
     MyprofileComponent,
     MydonationComponent,
     MytransactionsComponent,
+    AdminComponent,
+    EditdonationadminComponent,
+    MyprofileadminComponent,
+    UserComponent,
 
   ],
   imports: [
