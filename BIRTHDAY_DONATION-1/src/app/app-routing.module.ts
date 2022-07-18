@@ -9,6 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/register/signup.component';
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
+import { TempComponent } from './sharepage/temp/temp.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'user',component:UserPageComponent},
-  {path:'admin',component:AdminPageComponent}
+  {path:'admin',component:AdminPageComponent},
+  {path:'temp',component:TempComponent}
 
 ];
 

@@ -23,6 +23,20 @@
                     <a class="nav-link " routerLink="contact-us" routerLinkActive="active-link">CONTACT_US</a>
                 </li>
 
+                <!-- temp link -->
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="temp" routerLinkActive="active-link">Temp</a>
+                </li>
+
+                <!-- User link -->
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="user" routerLinkActive="active-link">User</a>
+                </li>
+                <!-- Admin Link -->
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="admin" routerLinkActive="active-link">Admin</a>
+                </li>
+
                 <li class="nav-item" *ngIf="!userIsAuthenticated">
                     <a class="nav-link " routerLink="signup" routerLinkActive="active-link">Signup</a>
                 </li>
@@ -31,16 +45,9 @@
                 </li>
 
                 <li class="nav-item" *ngIf="userIsAuthenticated">
-                    <button>Logout</button>
+                    <button (click)="onLogout()">Logout</button>
                 </li>
 
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link " routerLink="user" routerLinkActive="active-link">User</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " routerLink="admin" routerLinkActive="active-link">Admin</a>
-                </li> -->
             </ul>
         </div>
     </div>

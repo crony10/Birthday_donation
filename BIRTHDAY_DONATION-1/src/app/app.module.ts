@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { TempComponent } from './sharepage/temp/temp.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     SignupComponent,
     AdminPageComponent,
     UserPageComponent,
+    TempComponent,
 
   ],
   imports: [

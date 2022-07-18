@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 
 @Injectable({ providedIn: "root" })
 export class donationService {
 
+   
     constructor(private http: HttpClient) { }
 
     donationObject = {

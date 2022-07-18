@@ -1,13 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { donationService } from './donation.service';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
+
 
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
   styleUrls: ['./donation.component.css']
 })
-export class DonationComponent implements OnInit {
+export class DonationComponent implements OnInit,OnDestroy {
+  userIsAuthenticated:Boolean = false;
+  
+  private authListenerSubs: Subscription = new Subscription;
+  constructor(public authService:AuthService, public donationService:donationService) { }
+
+  ngOnInit(){
+
+    this.userIsAuthenticated = this.authService.getIsAuth();
+
+    this.authListenerSubs = this.authService.
+    getAuthStatusListener().
+    subscribe(isAuthenticated=>{
+      this.userIsAuthenticated = isAuthenticated;
+      console.log("in donation component userIsAuth is: "+this.userIsAuthenticated);
+    });
+    // console.log(this.userIsAuthenticated);
+  }
+
+  ngOnDestroy(){
+    this.authListenerSubs?.unsubscribe();
+  }
 
   message = '';
 
@@ -68,7 +91,7 @@ export class DonationComponent implements OnInit {
     text:'donate here'
     }
   }]
-  constructor(private http: HttpClient,public donationService:donationService) { }
+  
 
   sendDonation(){
     // for sending the donation
@@ -82,6 +105,4 @@ export class DonationComponent implements OnInit {
     this.donationService.fetchDonation();
   }
 
-  ngOnInit(): void {
-  }
 }
