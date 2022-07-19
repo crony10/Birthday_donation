@@ -10,6 +10,7 @@ import { SignupComponent } from './auth/register/signup.component';
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { TempComponent } from './sharepage/temp/temp.component';
+import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'user',component:UserPageComponent},
   {path:'admin',component:AdminPageComponent},
-  {path:'temp',component:TempComponent}
+  {path:'temp',component:TempComponent},
+  {path:'admin_login',component:AdminLoginComponent}
 
 ];
 

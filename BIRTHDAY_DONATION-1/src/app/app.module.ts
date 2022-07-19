@@ -24,6 +24,7 @@ import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { TempComponent } from './sharepage/temp/temp.component';
+import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { TempComponent } from './sharepage/temp/temp.component';
     AdminPageComponent,
     UserPageComponent,
     TempComponent,
+    AdminLoginComponent
 
   ],
   imports: [

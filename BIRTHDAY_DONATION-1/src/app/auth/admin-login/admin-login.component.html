@@ -6,9 +6,9 @@
                     class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <h1>User Signup</h1>
+                <h1>Admin Login</h1>
                 <mat-card>
-                    <form (submit) = "onSignupClicked(signupForm)" #signupForm = "ngForm">
+                    <form (submit) = "onAdminLoginClicked(loginForm)" #loginForm = "ngForm">
 
                         <mat-form-field>
                             <input 
@@ -33,12 +33,12 @@
                             <mat-error *ngIf="passwordInput.invalid">Enter valid password</mat-error>
                         </mat-form-field>
 
-                        <button #submitButton mat-raised-button color="accent" type="submit">Signup</button>
+                        <button #submitButton mat-raised-button color="accent" type="submit">Login</button>
                     </form>
                 </mat-card>
                 <div class="text-center text-lg-start mt-4 pt-2">
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? 
-                        <a class="link-danger" (click)="onLoginClicked()">Login</a>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Not an admin? Log in as a User.
+                        <a class="link-danger" (click)="onUserLoginClicked()">User Login</a>
                     </p>
                 </div>
             </div>

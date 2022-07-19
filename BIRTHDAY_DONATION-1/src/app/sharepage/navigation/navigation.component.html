@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="">BD</a>
+        <a class="navbar-brand" routerLink="">BirthDay Donation</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,10 +8,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+                    <a class="nav-link active" routerLink="" routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{exact:true}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="about_this_website" routerLinkActive="active-link">ABOUT THIS WEBSITE</a>
+                    <a class="nav-link" routerLink="about_this_website" routerLinkActive="active-link">ABOUT THIS
+                        WEBSITE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="donation" routerLinkActive="active-link">DONATION</a>
@@ -28,26 +30,88 @@
                     <a class="nav-link " routerLink="temp" routerLinkActive="active-link">Temp</a>
                 </li>
 
-                <!-- User link -->
-                <li class="nav-item">
+                <!-- User Page link -->
+                <!-- <li class="nav-item">
                     <a class="nav-link " routerLink="user" routerLinkActive="active-link">User</a>
-                </li>
-                <!-- Admin Link -->
-                <li class="nav-item">
+                </li> -->
+
+                <!-- Admin Page Link -->
+                <!-- <li class="nav-item">
                     <a class="nav-link " routerLink="admin" routerLinkActive="active-link">Admin</a>
-                </li>
+                </li> -->
 
-                <li class="nav-item" *ngIf="!userIsAuthenticated">
-                    <a class="nav-link " routerLink="signup" routerLinkActive="active-link">Signup</a>
-                </li>
-                <li class="nav-item" *ngIf="!userIsAuthenticated">
-                    <a class="nav-link " routerLink="login" routerLinkActive="active-link">Login</a>
-                </li>
+                <!-- User signup Link -->
+                <!-- <li class="nav-item" *ngIf="!userIsAuthenticated">
+                    <a class="nav-link " routerLink="signup" routerLinkActive="active-link"> User Signup</a>
+                </li> -->
+                
+                <!-- User login link -->
+                <!-- <li class="nav-item" *ngIf="!userIsAuthenticated">
+                    <a class="nav-link " routerLink="login" routerLinkActive="active-link">User Login</a>
+                </li> -->
 
-                <li class="nav-item" *ngIf="userIsAuthenticated">
+                <!-- Admin Login -->
+                <!-- <li class="nav-item" *ngIf="!userIsAuthenticated">
+                    <a class="nav-link " routerLink="admin_login" routerLinkActive="active-link">Admin Login</a>
+                </li> -->
+
+                
+                <!-- <li class="nav-item" *ngIf="userIsAuthenticated">
                     <button (click)="onLogout()">Logout</button>
+                </li> -->
+
+
+                <!-- <li class="nav-item dropdown">
+                   
+                </li> -->
+
+                <!-- show this dropdown when user is not authenticated -->
+                <li class="nav-item dropdown" *ngIf="!userIsAuthenticated && !adminIsAuthenticated">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Login/Signup
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <!-- <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a> -->
+
+                        <!-- User signup Link -->
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="signup" routerLinkActive="active-link"> User Signup</a>
+
+                        <!-- User login link -->
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="login" routerLinkActive="active-link">User Login</a>
+
+
+                        <div class="dropdown-divider"></div>
+                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+
+                        <!-- Admin Login -->
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated"  routerLink="admin_login" routerLinkActive="active-link">Admin Login</a>
+                    </div>
                 </li>
 
+
+                <!-- show this dropdown when user is authenticated -->
+                <li class="nav-item dropdown" *ngIf="userIsAuthenticated || adminIsAuthenticated">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        My Profile
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        
+                        <!-- User page -->
+                        <a *ngIf="userIsAuthenticated" class="dropdown-item" routerLink="user" routerLinkActive="active-link">User</a>
+
+                        <!-- Admin page -->
+                        <a *ngIf="adminIsAuthenticated" class="dropdown-item" routerLink="admin" routerLinkActive="active-link">Admin</a>
+
+                        <div class="dropdown-divider"></div>
+                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+
+                        <!-- Logout Button -->
+                        <button (click)="onLogout()">Logout</button>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
