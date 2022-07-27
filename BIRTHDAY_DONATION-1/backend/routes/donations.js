@@ -14,10 +14,14 @@ router.post("",
         try {
             // const donation  = req.body.donation;
             // console.log(donation);
+            console.log(req.userData);
 
             const donation = new Donation({
-                amount: req.body.amount
+                amount: req.body.amount,
+                creator: req.userData.userId  
             })
+
+
             console.log("this is backend speaking: donation is: " + donation);
             donation.save();
             res.status(201).json({
@@ -40,7 +44,7 @@ router.get("",
                     message: 'sent the donation at server',
                     donations: documents
                 });
-                console.log(documents);
+                console.log("this is from the backend your requested document is: " + documents);
             });
 
 

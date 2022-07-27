@@ -11,6 +11,7 @@ import { UserPageComponent } from './pages/profile_pages/user-page/user-page.com
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { TempComponent } from './sharepage/temp/temp.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,8 +21,8 @@ const routes: Routes = [
   {path:'contact-us',component:CONTACTUSComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'user',component:UserPageComponent},
-  {path:'admin',component:AdminPageComponent},
+  {path:'user',component:UserPageComponent,canActivate:[AuthGuard]},
+  {path:'admin',component:AdminPageComponent,canActivate:[AuthGuard]},
   {path:'temp',component:TempComponent},
   {path:'admin_login',component:AdminLoginComponent}
 
@@ -29,6 +30,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[AuthGuard]
 })
 export class AppRoutingModule { }

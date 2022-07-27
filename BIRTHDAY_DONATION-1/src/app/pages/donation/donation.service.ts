@@ -29,19 +29,20 @@ export class donationService {
     }
 
     fetchDonation() {
-        // for getting
+        // for getting the donation
         this.http.
             get<{ message: string, donations: any }>('http://localhost:3000/api/donation')
             .pipe(map((donationData) => {
-                return donationData.donations.map((donation: { _id: any; amount: any; }) => {
+                return donationData.donations.map((donation: { _id: any; amount: any; creator:any }) => {
                     return {
                         id: donation._id,
-                        amount: donation.amount
+                        amount: donation.amount,
+                        creator: donation.creator
                     }
                 });
             }))
             .subscribe((transfromedDonations) => {
-                console.table(transfromedDonations);
+                console.table("this is service your mapped/transformed data of donations is : " + transfromedDonations);
                 this.donationObject = transfromedDonations;
                 // console.log("aayi gyu: "+ donationData.donations  + " and the message is: " + donationData.message); 
                 console.log("gotcha!!!");

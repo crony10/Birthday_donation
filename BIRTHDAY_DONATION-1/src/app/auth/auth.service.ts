@@ -11,7 +11,9 @@ import { Router } from "@angular/router";
 export class AuthService {
     private isAuthenticated = false;
     private isAdminAuthenticated = false;
-
+    private expiresInDuration!:number;
+    private tokenTimer: any;
+    
     private token!: string | null;
     private authStatusListener = new Subject<boolean>();
     private adminAuthStatusListener = new Subject<boolean>();
@@ -56,13 +58,20 @@ export class AuthService {
 
     loginUser(email: string, password: string) {
         const authData: AuthData = { email: email, password: password };
-        this.http.post<{ token: string }>("http://localhost:3000/api/auth_user/login", authData)
+        this.http.post<{ token: string,expiresIn:number }>("http://localhost:3000/api/auth_user/login", authData)
             .subscribe(response => {
                 console.log(response);
                 const token = response.token;
                 this.token = token;
                 if (token) {
+                    this.expiresInDuration = response.expiresIn;
+                    console.log(this.expiresInDuration);
                     this.isAuthenticated = true;
+
+                    this.tokenTimer = setTimeout(()=>{
+                        this.logoutUser();
+                    },this.expiresInDuration*1000);
+                    
                     this.authStatusListener.next(true);
                     this.router.navigate(['/user']);
                 }
@@ -87,6 +96,7 @@ export class AuthService {
 
         this.authStatusListener.next(false);
         this.adminAuthStatusListener.next(false);
+        clearTimeout(this.tokenTimer);
         this.router.navigate(['/']);
     }
 }
