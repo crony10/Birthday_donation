@@ -40,3 +40,8 @@
 .row mt-5{
     height: 100px;
 }
+
+.line-set{
+    border-left: 4px solid rgba(64, 3, 186, 0.479);
+    padding-left: 8px;
+}
