@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { donationService } from './donation.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class DonationComponent implements OnInit,OnDestroy {
   userIsAuthenticated:Boolean = false;
   
   private authListenerSubs: Subscription = new Subscription;
-  constructor(public authService:AuthService, public donationService:donationService) { }
+  constructor(public authService:AuthService, public donationService:donationService,private router:Router) { }
 
   ngOnInit(){
 
@@ -95,14 +96,24 @@ export class DonationComponent implements OnInit,OnDestroy {
 
   sendDonation(){
     // for sending the donation
+    if(this.donationObject.amount==0){
+      alert('Enter some amount please!');
+      return;
+    }
     console.log("sending the amount : ",this.donationObject.amount);
     this.donationService.sendDonation(this.donationObject.amount);
+    alert('Donation successful!!!');
   }
 
   fetchDonation() {
     
     // for getting
     this.donationService.fetchDonation();
+  }
+
+  signupClicked(){
+    this.router.navigate(['/signup']);
+    return;
   }
 
 }
