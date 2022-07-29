@@ -1,12 +1,17 @@
 
 
 .navbar-light .navbar-nav .nav-link{
-    color: var(--secondary-color);
+    color: black;
     
 }
 
 .navbar-light .navbar-nav .nav-link.active-link{
-    color: var(--primary-color);
+    color: rgb(243, 72, 72);
     text-decoration: underline;
     
 }
+
+.mat-tab-nav-bar{
+    background-color: rgb(105, 249, 239);
+}
+
