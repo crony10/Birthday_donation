@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="">BirthDay Donation</a>
+
+        <a href="#" class="navbar-brand">
+            <img src="../../../assets/image/logo.jpg" width="45" alt="" class="d-inline-block align-middle mr-2">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,7 +47,7 @@
                 <!-- <li class="nav-item" *ngIf="!userIsAuthenticated">
                     <a class="nav-link " routerLink="signup" routerLinkActive="active-link"> User Signup</a>
                 </li> -->
-                
+
                 <!-- User login link -->
                 <!-- <li class="nav-item" *ngIf="!userIsAuthenticated">
                     <a class="nav-link " routerLink="login" routerLinkActive="active-link">User Login</a>
@@ -55,7 +58,7 @@
                     <a class="nav-link " routerLink="admin_login" routerLinkActive="active-link">Admin Login</a>
                 </li> -->
 
-                
+
                 <!-- <li class="nav-item" *ngIf="userIsAuthenticated">
                     <button (click)="onLogout()">Logout</button>
                 </li> -->
@@ -76,17 +79,20 @@
                         <a class="dropdown-item" href="#">Another action</a> -->
 
                         <!-- User signup Link -->
-                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="signup" routerLinkActive="active-link"> User Signup</a>
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="signup"
+                            routerLinkActive="active-link"> User Signup</a>
 
                         <!-- User login link -->
-                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="login" routerLinkActive="active-link">User Login</a>
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="login"
+                            routerLinkActive="active-link">User Login</a>
 
 
                         <div class="dropdown-divider"></div>
                         <!-- <a class="dropdown-item" href="#">Something else here</a> -->
 
                         <!-- Admin Login -->
-                        <a class="dropdown-item" *ngIf="!userIsAuthenticated"  routerLink="admin_login" routerLinkActive="active-link">Admin Login</a>
+                        <a class="dropdown-item" *ngIf="!userIsAuthenticated" routerLink="admin_login"
+                            routerLinkActive="active-link">Admin Login</a>
                     </div>
                 </li>
 
@@ -98,12 +104,14 @@
                         My Profile
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        
+
                         <!-- User page -->
-                        <a *ngIf="userIsAuthenticated" class="dropdown-item" routerLink="user" routerLinkActive="active-link">User</a>
+                        <a *ngIf="userIsAuthenticated" class="dropdown-item" routerLink="user"
+                            routerLinkActive="active-link">User</a>
 
                         <!-- Admin page -->
-                        <a *ngIf="adminIsAuthenticated" class="dropdown-item" routerLink="admin" routerLinkActive="active-link">Admin</a>
+                        <a *ngIf="adminIsAuthenticated" class="dropdown-item" routerLink="admin"
+                            routerLinkActive="active-link">Admin</a>
 
                         <div class="dropdown-divider"></div>
                         <!-- <a class="dropdown-item" href="#">Something else here</a> -->
