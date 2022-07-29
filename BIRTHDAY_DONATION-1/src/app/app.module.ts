@@ -14,17 +14,20 @@ import { LoginComponent } from './auth/login/login.component';
 import { AboutThisWebsiteComponent } from './pages/about-this-website/about-this-website.component';
 import { SignupComponent } from './auth/register/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material/tabs';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { TempComponent } from './sharepage/temp/temp.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
+
+// angular material imports
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,9 @@ import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],
   bootstrap: [AppComponent]

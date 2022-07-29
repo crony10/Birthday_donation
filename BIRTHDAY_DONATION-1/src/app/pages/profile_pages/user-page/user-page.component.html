@@ -1,14 +1,39 @@
 <!-- <p>user-page works!</p> -->
 
 <h1 style="text-align:center; padding: 10px;">user page</h1>
-<div class="div border border-primary">
+
+<!-- class="div border border-primary" -->
+<div>
    <div class="row">
-    
-    <div class="col">
-        <h1>Welcome!!!</h1>
-    </div>
-    <div class="col m-5">
-       <button class="btn btn-success" (click)="showDonations()">show donations</button>
-    </div>
+      <div class="col ">
+         <h1>Welcome!!!</h1>
+      </div>
+   </div>
+
+   <div class="row mt-5">
+      <div class="col-sm">
+         <button class="btn btn-success">My Profile</button>
+      </div>
+      <div class="col-sm">
+         <button class="btn btn-success" (click)="showDonations()">Donation History</button>
+      </div>
+      <div class="col-sm">
+         <button class="btn btn-success" (click)="showDonations()">Donation Points</button>
+      </div>
+   </div>
+
+   <div class="row mt-5">
+         <mat-accordion>
+            <mat-expansion-panel>
+               <mat-expansion-panel-header>
+                  this is heading
+               </mat-expansion-panel-header>
+                  this is body
+            </mat-expansion-panel>
+         </mat-accordion>
    </div>
 </div>
+
+<!-- <div class="m-5">
+   
+</div> -->

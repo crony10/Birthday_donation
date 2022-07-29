@@ -41,22 +41,22 @@ export class DonationComponent implements OnInit,OnDestroy {
   cardProperties = [{
     card1: {
       image: '../../../assets/image/boy.webp',
-      title: 'Food donation',
+      title: 'You Can Help Hundreds Of Underprivileged Children Get An Education',
       text: 'donate here'
     },
     card2:{
       image:'../../../assets/image/urgent.jpg',
-    title:'Food donation',
+    title:'Donate Education Kit & Help These Children In Need',
     text:'donate here'
     },
     card3:{
       image:'../../../assets/image/urgent3.jfif',
-    title:'Food donation',
+    title:'Help Vridh Care Provide Hygiene Kits For Senior Citizens In Old Age Homes',
     text:'donate here'
     },
     card4:{
       image:'../../../assets/image/urgent4.jpg',
-    title:'Food donation',
+    title:'Support Dinesh In Building A Safe Animal Shelter',
     text:'donate here'
     },
 
