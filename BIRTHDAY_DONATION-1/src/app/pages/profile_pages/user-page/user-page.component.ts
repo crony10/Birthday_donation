@@ -21,7 +21,14 @@ export class UserPageComponent implements OnInit {
   }
 
   showDonations(){
-    this.donationService.fetchDonation();
+    this.donationObject = this.donationService.getDonationObject();
+    console.log("oik" + this.donationObject);
+  }
+  showMyProfile(){
+    console.log("showing donations")
+  }
+  showDonationPoints(){
+    console.log("showing donations")
   }
 
 }

@@ -37,7 +37,8 @@ export class DonationComponent implements OnInit,OnDestroy {
 
   donationObject = {
     id: 0,
-    amount: 0
+    amount: 0,
+    title:''
   }
   cardProperties = [{
     card1: {
@@ -100,7 +101,7 @@ export class DonationComponent implements OnInit,OnDestroy {
       alert('Enter some amount please!');
       return;
     }
-    console.log("sending the amount : ",this.donationObject.amount);
+    console.log("sending the amount : ",this.donationObject.amount + "also the title is: " + this.donationObject.title);
     this.donationService.sendDonation(this.donationObject.amount);
     alert('Donation successful!!!');
   }

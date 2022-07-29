@@ -17,6 +17,11 @@ export class donationService {
         amount: 0
     }
 
+    getDonationObject(){
+        console.log("fun called : "+this.donationObject);
+        return this.donationObject;
+    }
+
     sendDonation(amount:number) {
         // for posting
         this.donationObject.amount = amount;

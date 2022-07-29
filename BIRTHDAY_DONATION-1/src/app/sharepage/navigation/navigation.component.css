@@ -1,17 +1,25 @@
-
-
-.navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link {
     color: black;
-    
+
 }
 
-.navbar-light .navbar-nav .nav-link.active-link{
+.navbar-light .navbar-nav .nav-link.active-link {
     color: rgb(243, 72, 72);
     text-decoration: underline;
-    
+
 }
 
-.mat-tab-nav-bar{
+.mat-tab-nav-bar {
     background-color: rgb(105, 249, 239);
 }
 
+.dropdown-menu{
+    /*Sets all the content of dropdown div to center*/
+    text-align: center;
+}
+
+.nav-item > .dropdown-menu >a:hover {
+    background-image: none;
+    background-color: #F9B234;
+    color: white;
+}

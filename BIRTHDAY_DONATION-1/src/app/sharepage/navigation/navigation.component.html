@@ -28,10 +28,6 @@
                     <a class="nav-link " routerLink="contact-us" routerLinkActive="active-link">CONTACT_US</a>
                 </li>
 
-                <!-- temp link -->
-                <li class="nav-item">
-                    <a class="nav-link " routerLink="temp" routerLinkActive="active-link">Temp</a>
-                </li>
 
                 <!-- User Page link -->
                 <!-- <li class="nav-item">
@@ -107,17 +103,17 @@
 
                         <!-- User page -->
                         <a *ngIf="userIsAuthenticated" class="dropdown-item" routerLink="user"
-                            routerLinkActive="active-link">User</a>
+                            routerLinkActive="active-link">User Page</a>
 
                         <!-- Admin page -->
                         <a *ngIf="adminIsAuthenticated" class="dropdown-item" routerLink="admin"
-                            routerLinkActive="active-link">Admin</a>
+                            routerLinkActive="active-link">Admin Page</a>
 
                         <div class="dropdown-divider"></div>
                         <!-- <a class="dropdown-item" href="#">Something else here</a> -->
 
                         <!-- Logout Button -->
-                        <button (click)="onLogout()">Logout</button>
+                        <button class="btn btn-danger" (click)="onLogout()">Logout</button>
                     </div>
                 </li>
             </ul>
