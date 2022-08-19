@@ -6,21 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent implements OnInit {
+  enteredTitle='';
   title='';
 
-  donations=[
-    {
-      title:''
-    }
-  ];
+  campaigns=[
+    {title:"first camp"},
+    {title:"second camp"}
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAddDonation(){
-    console.log("heollo");
+  onAddCampaign(){
+    this.campaigns.push({title:this.enteredTitle});
   }
 
 }

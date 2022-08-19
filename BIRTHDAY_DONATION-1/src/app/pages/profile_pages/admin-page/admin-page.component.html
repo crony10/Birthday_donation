@@ -1,4 +1,19 @@
-<h1 style="text-align:center; padding: 10px;">Admin Page</h1>
+<mat-card>
+    <mat-form-field>
+        <textarea  rows="8"></textarea>
+    </mat-form-field>
+    <button (click)="onAddCampaign"></button>
+</mat-card>
+
+<!-- <mat-accordion>
+    <mat-expansion-panel>
+        {{title}}
+    </mat-expansion-panel>
+</mat-accordion> -->
+
+
+
+<!-- <h1 style="text-align:center; padding: 10px;">Admin Page</h1>
 <div class="container-fluid">
     <div class="container">
         <div class="row mt-2" style="height: 500px;">
@@ -8,8 +23,8 @@
                     <h1 class="text-white ps-3 pt-2 pb-2" style="text-align: center;">Add Donations</h1>
                 </div>
                 <div class="input-group p-4 shadow">
-                    <input type="text" class="form-control" placeholder="Enter the title of the donation" name="task" [(ngModel)]="title">
-                    <button class="btn btn-outline-success" type="button">+</button>
+                    <input type="text" class="form-control" placeholder="Enter the title of the donation" name="task" [(ngModel)]="enteredTitle">
+                    <button class="btn btn-outline-success" type="button" (click)="onAddTitle()">+</button>
                 </div>
 
                 <h4 class="text-primary mt-4">Donations:  </h4>
@@ -17,9 +32,9 @@
                 <div>
                     <div class="m-3">
                         <div class="p-2 shadow border">
-                            <div class="input-group row ps-3">
-                                <div class="card col-md-10 border-0">
-                                    Donation title
+                            <div class="input-group row ps-3" *ngFor="let camp of campaigns">
+                                <div class="card col-md-10 border-2 pb-2">
+                                    {{camp.title}}
                                 </div>
                                 <div class="btn btn-outline-danger col">X</div>
                             </div>
@@ -30,4 +45,4 @@
             <div class="col"></div>
         </div>
     </div>
-</div>
+</div> -->
