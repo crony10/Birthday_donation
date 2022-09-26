@@ -1,48 +1,25 @@
-<mat-card>
-    <mat-form-field>
-        <textarea  rows="8"></textarea>
-    </mat-form-field>
-    <button (click)="onAddCampaign"></button>
-</mat-card>
+<!-- <p>user-page works!</p> -->
 
-<!-- <mat-accordion>
-    <mat-expansion-panel>
-        {{title}}
-    </mat-expansion-panel>
-</mat-accordion> -->
+<!-- <h1 style="text-align:center; padding: 10px;">Admin page</h1> -->
 
+<!-- class="div border border-primary" -->
+<div>
+   <div class="row ">
+      <div class="col d-flex justify-content-center">
+         <h1>Welcome!!!</h1>
+      </div>
+   </div>
 
+   <div class="row mt-5">
+      <div class="col-sm text-center">
+         <button class="btn btn-success" (click)="adminProfileClickd()">My Profile</button>
+      </div>
+      <div class="col-sm text-center">
+         <button class="btn btn-success" (click)="addCampaignClicked()">Add campaigns</button>
+      </div>
+   </div>
 
-<!-- <h1 style="text-align:center; padding: 10px;">Admin Page</h1>
-<div class="container-fluid">
-    <div class="container">
-        <div class="row mt-2" style="height: 500px;">
-            <div class="col"></div>
-            <div class="col-md-6 bg-white shadow">
-                <div class="card bg-warning">
-                    <h1 class="text-white ps-3 pt-2 pb-2" style="text-align: center;">Add Donations</h1>
-                </div>
-                <div class="input-group p-4 shadow">
-                    <input type="text" class="form-control" placeholder="Enter the title of the donation" name="task" [(ngModel)]="enteredTitle">
-                    <button class="btn btn-outline-success" type="button" (click)="onAddTitle()">+</button>
-                </div>
+   <app-add-campaigns *ngIf="!profileClicked"></app-add-campaigns>
+   <app-admin-profile *ngIf="profileClicked"></app-admin-profile>
 
-                <h4 class="text-primary mt-4">Donations:  </h4>
-
-                <div>
-                    <div class="m-3">
-                        <div class="p-2 shadow border">
-                            <div class="input-group row ps-3" *ngFor="let camp of campaigns">
-                                <div class="card col-md-10 border-2 pb-2">
-                                    {{camp.title}}
-                                </div>
-                                <div class="btn btn-outline-danger col">X</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
-</div> -->
+  

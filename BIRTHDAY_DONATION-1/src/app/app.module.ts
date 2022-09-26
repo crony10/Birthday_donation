@@ -20,6 +20,8 @@ import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.
 import { UserPageComponent } from './pages/profile_pages/user-page/user-page.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 // angular material imports
 import {MatInputModule} from '@angular/material/input';
@@ -27,6 +29,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AddCampaignsComponent } from './pages/profile_pages/admin-page/add-campaigns/add-campaigns.component';
+import { AdminProfileComponent } from './pages/profile_pages/admin-page/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     SignupComponent,
     AdminPageComponent,
     UserPageComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AddCampaignsComponent,
+    AdminProfileComponent
 
   ],
   imports: [
@@ -58,6 +64,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatButtonModule,
     ReactiveFormsModule,
     MatExpansionModule,
+    MatToolbarModule,
+    MatIconModule
 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],

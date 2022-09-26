@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-page',
@@ -9,18 +10,29 @@ export class AdminPageComponent implements OnInit {
   enteredTitle='';
   title='';
 
+  profileClicked = 1;
+
+
   campaigns=[
     {title:"first camp"},
     {title:"second camp"}
   ]
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onAddCampaign(){
     this.campaigns.push({title:this.enteredTitle});
+  }
+
+  adminProfileClickd(){
+    this.profileClicked = 1;
+  }
+
+  addCampaignClicked(){
+    this.profileClicked = 0;
   }
 
 }

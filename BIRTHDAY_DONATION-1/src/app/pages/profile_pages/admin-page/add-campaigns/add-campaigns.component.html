@@ -1,0 +1,22 @@
+<div class="row mt-5">
+   <mat-card>
+      <mat-form-field>
+         <textarea matInput rows="6"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="onAddCampaign()">Save campaign</button>
+   </mat-card>
+</div>
+
+
+<div class="row mt-5">
+   <mat-accordion multi="true" >
+      <mat-expansion-panel *ngFor="let campaign of campaigns">
+         <mat-expansion-panel-header>
+            {{campaign.title}}
+         </mat-expansion-panel-header>
+         this is image
+      </mat-expansion-panel>
+   </mat-accordion>
+
+
+</div>

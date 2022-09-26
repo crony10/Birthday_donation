@@ -1,4 +1,4 @@
-.footer{
+/* .footer{
     background-color: #F9B234;
     overflow: hidden;
     position: sticky;
@@ -27,4 +27,10 @@ p{
 a:hover{
     color: var(--primary-color);
 }
-
+ */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

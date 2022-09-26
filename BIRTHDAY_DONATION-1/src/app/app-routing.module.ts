@@ -11,6 +11,8 @@ import { UserPageComponent } from './pages/profile_pages/user-page/user-page.com
 import { AdminPageComponent } from './pages/profile_pages/admin-page/admin-page.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AddCampaignsComponent } from './pages/profile_pages/admin-page/add-campaigns/add-campaigns.component';
+import { AdminProfileComponent } from './pages/profile_pages/admin-page/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'user',component:UserPageComponent,canActivate:[AuthGuard]},
   {path:'admin',component:AdminPageComponent,canActivate:[AuthGuard]},
-  {path:'admin_login',component:AdminLoginComponent}
+  {path:'admin_login',component:AdminLoginComponent},
+  {path:'add-campaign',component:AddCampaignsComponent},
+  {path:'admin-profile',component:AdminProfileComponent}
 
 ];
 

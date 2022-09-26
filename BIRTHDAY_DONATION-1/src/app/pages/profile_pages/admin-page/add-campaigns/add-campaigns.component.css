@@ -1,0 +1,13 @@
+mat-card,p{
+    width: 80%;
+    margin: auto;
+}
+mat-accordian,mat-expansion-panel{
+    width: 80%;
+    margin: auto;
+}
+
+mat-form-field,textarea{
+    width: 100%;
+    margin:auto
+}
